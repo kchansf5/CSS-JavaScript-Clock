@@ -36,6 +36,10 @@
       align-items: center;
     }
 
+    @font-face {
+      font-family: digitalFont;
+      src: url("digital-7.ttf");
+    }
     .clock {
       width: 30rem;
       height: 30rem;
@@ -79,10 +83,9 @@
       background: orange;
     }
 
-    .digital {
-      width: 100px;
-      height: 100px;
-      border: 1px solid red;
+    #digital {
+      color: white;
+      font-family: digitalFont;
     }
 
   </style>
@@ -132,19 +135,7 @@
         seconds = now.getSeconds();
       }
 
-
-      if(seconds < 10) {
-        document.getElementById('digital').innerHTML = `${hours}:${minutes}:0${seconds}`;
-      } else {
-        document.getElementById('digital').innerHTML = `${hours}:${minutes}:${seconds}`;
-      }
-
-      if(minutes < 10) {
-        document.getElementById('digital').innerHTML = `${hours}:0${minutes}:${seconds}`;
-      } else {
-        document.getElementById('digital').innerHTML = `${hours}:${minutes}:${seconds}`;
-      }
-
+      document.getElementById('digital').innerHTML = `${hours}:${minutes}:${seconds}`;
     }
 
     setInterval(setDate, 1000);
