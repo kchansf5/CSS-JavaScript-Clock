@@ -7,7 +7,8 @@
 <body>
 
 
-  <div id="digital"></div>
+  <div id="digital-time"></div>
+  <div id="day"></div>
     <div class="clock">
       <div class="clock-face">
         <div class="hand hour-hand"></div>
@@ -83,7 +84,7 @@
       background: orange;
     }
 
-    #digital {
+    #digital-time {
       color: white;
       font-family: digitalFont;
       margin-top: 50px;
@@ -114,8 +115,9 @@
       hoursHand.style.transform = `rotate(${hoursDegrees}deg)`;
     };
 
+    const now = new Date();
+
     function setDigitalTime() {
-      const now = new Date();
 
       let hours = now.getHours();
       let minutes = now.getMinutes();
@@ -137,7 +139,7 @@
         seconds = now.getSeconds();
       }
 
-      document.getElementById('digital').innerHTML = `${hours}:${minutes}:${seconds}`;
+      document.getElementById('digital-time').innerHTML = `${hours}:${minutes}:${seconds}`;
     }
 
     setInterval(setDate, 1000);
@@ -153,7 +155,7 @@
         "6":"Saturday",
         "7":"Sunday",
       };
-      // map.set(1,"Monday");
+      document.getElementById('day').innerHTML = map[(now.getDay()).toString()];
       console.log(map["1"]);
     }
 
