@@ -91,6 +91,12 @@
       font-size: 50px;
     }
 
+    #day {
+      color: orange;
+      font-family: digitalFont;
+      margin-top: 10px;
+    }
+
   </style>
 
   <script>
@@ -115,9 +121,9 @@
       hoursHand.style.transform = `rotate(${hoursDegrees}deg)`;
     };
 
-    const now = new Date();
 
     function setDigitalTime() {
+      const now = new Date();
 
       let hours = now.getHours();
       let minutes = now.getMinutes();
@@ -142,10 +148,9 @@
       document.getElementById('digital-time').innerHTML = `${hours}:${minutes}:${seconds}`;
     }
 
-    setInterval(setDate, 1000);
-    setInterval(setDigitalTime, 1000);
-
     function setDay() {
+      const now = new Date();
+
       let map = {
         "1":"Monday",
         "2":"Tuesday",
@@ -156,9 +161,11 @@
         "7":"Sunday",
       };
       document.getElementById('day').innerHTML = map[(now.getDay()).toString()];
-      console.log(map["1"]);
     }
 
+    setInterval(setDate, 1000);
+    setInterval(setDigitalTime, 1000);
+    setInterval(setDay(), 1000);
   </script>
 </body>
 </html>
