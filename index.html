@@ -151,7 +151,7 @@
     function setDay() {
       const now = new Date();
 
-      let map = {
+      let days = {
         "1":"Monday",
         "2":"Tuesday",
         "3":"Wednesday",
@@ -160,7 +160,7 @@
         "6":"Saturday",
         "7":"Sunday",
       };
-      document.getElementById('day').innerHTML = map[(now.getDay()).toString()];
+      document.getElementById('day').innerHTML = days[(now.getDay()).toString()];
     }
 
     setInterval(setDate, 1000);
