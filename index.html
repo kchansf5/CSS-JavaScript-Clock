@@ -14,6 +14,7 @@
         <div class="hand hour-hand"></div>
         <div class="hand min-hand"></div>
         <div class="hand second-hand"></div>
+        <div class="center"></div>
       </div>
     </div>
 
@@ -82,6 +83,16 @@
 
     .hour-hand {
       background: orange;
+    }
+
+    .center {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: orange;
+      display: inline-flex;
+      top: 143px;
     }
 
     #digital-time {
