@@ -8,8 +8,8 @@
 
 
   <div id="digital-time"></div>
-  <div id="calendar-date"></div>
   <div id="day"></div>
+  <div id="calendar-date"></div>
     <div class="clock">
       <div class="clock-face">
         <div class="hand hour-hand"></div>
@@ -109,6 +109,12 @@
       margin-top: 10px;
     }
 
+    #calendar-date {
+      color: orange;
+      font-family: digitalFont;
+      margin-top: 10px;
+    }
+
   </style>
 
   <script>
@@ -192,7 +198,7 @@
         11:"November",
         12:"December"
       };
-      document.getElementById('calendar-date').innerHTML = months[(now.getMonth())];
+      document.getElementById('calendar-date').innerHTML = months[(now.getMonth())+1];
     }
     document.getElementById('calendar-date').innerHTML = "hello";
 
