@@ -198,7 +198,7 @@
         11:"November",
         12:"December"
       };
-      document.getElementById('calendar-date').innerHTML = months[(now.getMonth())+1];
+      document.getElementById('calendar-date').innerHTML = months[(now.getMonth()) + 1] + ` ${now.getDate()}, ${now.getFullYear()}`;
     }
     document.getElementById('calendar-date').innerHTML = "hello";
 
