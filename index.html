@@ -182,6 +182,29 @@
       document.getElementById('day').innerHTML = days[(now.getDay())];
     }
 
+    function setDateSuffix() {
+      const now = new Date();
+
+      let date = now.getDate();
+      let st = [1,21,31];
+      let nd = [2, 22];
+      let rd = [3, 23];
+      let suff = "st"
+
+      if (st.includes(date)) {
+        suff = ("st");
+      }
+      else if (nd.includes(date)) {
+        suff = ("nd");
+      } else if (rd.includes(date)) {
+        suff = ("rd");
+      } else {
+        suff = ("th");
+      };
+
+      return suff;
+    }
+
     function setCalendarDate() {
       const now = new Date();
 
@@ -199,7 +222,7 @@
         11:"November",
         12:"December"
       };
-      document.getElementById('calendar-date').innerHTML = months[(now.getMonth()) + 1] + ` ${now.getDate()}, ${now.getFullYear()}`;
+      document.getElementById('calendar-date').innerHTML = months[(now.getMonth()) + 1] + ` ${now.getDate()}${setDateSuffix()}, ${now.getFullYear()}`;
     }
     document.getElementById('calendar-date').innerHTML = "hello";
 
