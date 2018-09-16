@@ -224,8 +224,20 @@
       };
       document.getElementById('calendar-date').innerHTML = months[(now.getMonth()) + 1] + ` ${now.getDate()}${setDateSuffix()}, ${now.getFullYear()}`;
     }
-    // document.getElementById('calendar-date').innerHTML = "hello";
 
+    function ampm() {
+      const now = new Date();
+
+      timeOfDay = "apmpm";
+
+      if (now.getHours < 12) {
+        timeOfDay = "AM"
+      } else {
+        timeOfDay = "PM"
+      }
+
+      console.log(timeOfDay);
+    }
     setInterval(setDate, 1000);
     setInterval(setDigitalTime, 1000);
     setInterval(setDay(), 1000);
