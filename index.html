@@ -144,7 +144,7 @@
       const now = new Date();
 
       timeOfDay = "apmpm";
-      if (now.getHours < 12) {
+      if (now.getHours() < 12) {
         timeOfDay = "AM"
 
       } else {
