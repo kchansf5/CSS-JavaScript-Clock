@@ -161,10 +161,11 @@
       let minutes = now.getMinutes();
       let seconds = now.getSeconds();
 
+
       if (now.getHours() < 10) {
         hours = `0${now.getHours()}`;
-      } else {
-        hours = now.getHours();
+      } else if (now.getHours() > 12) {
+        hours = now.getHours() - 12;
       }
       if (now.getMinutes() < 10) {
         minutes = `0${now.getMinutes()}`;
