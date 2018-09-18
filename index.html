@@ -73,7 +73,7 @@
       top:50%;
       transform-origin: 100%;
       transform: rotate(90deg);
-      transition: all 0.05s;
+      /* transition: all 0.05s; */
       transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     }
 
@@ -162,9 +162,7 @@
       let seconds = now.getSeconds();
 
 
-      if (now.getHours() < 10) {
-        hours = `0${now.getHours()}`;
-      } else if (now.getHours() > 12) {
+      if (now.getHours() > 12) {
         hours = now.getHours() - 12;
       }
       if (now.getMinutes() < 10) {
@@ -242,8 +240,8 @@
 
     setInterval(setDate, 1000);
     setInterval(setDigitalTime, 1000);
-    setInterval(setDay(), 1000);
-    setInterval(setCalendarDate(), 1000);
+    setInterval(setDay, 1000);
+    setInterval(setCalendarDate, 1000);
   </script>
 </body>
 </html>
