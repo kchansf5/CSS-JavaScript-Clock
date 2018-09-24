@@ -11,6 +11,7 @@
     <div id="digital-time"></div>
     <div id="day"></div>
     <div id="calendar-date"></div>
+    <div class="temperature">City Placeholder</div>
       <div class="clock">
         <div class="clock-face">
           <div class="hand hour-hand"></div>
@@ -245,6 +246,9 @@
       document.getElementById('calendar-date').innerHTML = months[(now.getMonth()) + 1] + ` ${now.getDate()}${setDateSuffix()}, ${now.getFullYear()}`;
     }
 
+    function todaysWeather() {
+      loadJSON('')
+    }
 
     setInterval(setDate, 1000);
     setInterval(setDigitalTime, 1000);
